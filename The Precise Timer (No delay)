@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<stdbool.h>
+void InitHardware()
+void SetLED(bool state)
+volatile uint32_t system_ticks = 0;
+void Timer_ISR(void)
+{
+++system_ticks;
+}
+#define TOGGLE_INTERVAL_MS 500
+int main(void){
+InitHardware();
+bool led_state = false;
+uint32_t last_toggle_time = 0;
+While(1){
+if ((system_ticks - last_toggle_time) >= TOGGLE_INTERVAL_MS){
+led_state = !led_state;
+SetLED(led_state);
+last_toggle_time = system_ticks;
+}
+}
+}
