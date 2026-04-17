@@ -1,0 +1,8 @@
+#include<stdio.h>
+#include<stdint.h>
+int main(void){
+uint16_t raw_packet = 0xABCD;
+uint8_t data_value = (raw_packet >> 8) & 0xFF;
+printf("Data Value: %u\n", data_value);
+return 0;
+}
