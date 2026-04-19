@@ -1,0 +1,13 @@
+#include<stdio.h>
+int arr[] = {45,12,791,23};
+int n = 5;
+int *ptr = arr;
+int max = *ptr;
+for(int i=1; i<n: i++){
+if(*ptr(ptr+i)>max){
+max= *(ptr+i);
+}
+}
+ptintf("maximum value:%d",max);
+return 0;
+}
